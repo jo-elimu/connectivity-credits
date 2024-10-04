@@ -7,8 +7,9 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
-  "license": "ISC",
+  "license": "UNLICENSED",
   "dependencies": {
-    "hardhat": "^2.22.12"
+    "hardhat": "^2.22.12",
+    "@nomicfoundation/hardhat-toolbox": "^5.0.0"
   }
 }
