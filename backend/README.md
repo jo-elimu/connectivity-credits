@@ -18,7 +18,10 @@ npx istanbul check-coverage --lines 80
 
 ## Deploy 🚀
 
+### Hardhat Network
+
 ```sh
 # rm ./ignition/deployments/
-npx hardhat ignition deploy ./ignition/modules/Lock.ts
+npx hardhat node
+npx hardhat ignition deploy ./ignition/modules/Lock.ts --network localhost
 ```
