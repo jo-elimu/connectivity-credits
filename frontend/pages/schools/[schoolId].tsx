@@ -7,7 +7,6 @@ import ConnectivityStatus from "@/components/ConnectivityStatus";
 
 export default function School({school}: any) {
   console.log('School')
-  console.log('school:', school)
 
   const router: NextRouter = useRouter()
   console.log('router.isFallback:', router.isFallback)
