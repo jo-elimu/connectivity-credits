@@ -8,6 +8,13 @@ npm run lint
 npm run build
 ```
 
+## Configure environment variables
+
+Copy `.env.sample` to `.env`, and add your environment variables:
+
+- `NEXT_PUBLIC_MAPBOX_TOKEN`: Copy from https://account.mapbox.com/
+- `API_KEY_GIGA`: Copy from https://maps.giga.global/docs/api-keys
+
 ## Run
 
 ```sh
