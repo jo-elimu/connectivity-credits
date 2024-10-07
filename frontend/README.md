@@ -1,5 +1,7 @@
 # Frontend
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/fb943190-1de3-418f-9eed-97047a3d116c/deploy-status)](https://app.netlify.com/sites/connectivity-credits/deploys)
+
 ## Build
 
 ```sh
