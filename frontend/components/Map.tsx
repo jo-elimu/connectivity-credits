@@ -10,7 +10,7 @@ export default function Map({school}: any) {
   const mapContainerRef = useRef()
 
   useEffect(() => {
-      mapboxgl.accessToken = process.env.NEXT_PUBLIC_MAPBOX_TOKEN
+      mapboxgl.accessToken = String(process.env.NEXT_PUBLIC_MAPBOX_TOKEN)
       mapRef.current = new mapboxgl.Map({
         container: mapContainerRef.current,
         style: 'mapbox://styles/mapbox/satellite-streets-v12',
