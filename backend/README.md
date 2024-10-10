@@ -23,5 +23,13 @@ npx istanbul check-coverage --lines 80
 ```sh
 # rm ./ignition/deployments/
 npx hardhat node
-npx hardhat ignition deploy ./ignition/modules/Lock.ts --network localhost
+npx hardhat ignition deploy ./ignition/modules/GigaCredit.ts --network localhost
+```
+
+### Sepolia Testnet
+
+```sh
+# rm ./ignition/deployments/
+npx hardhat node
+npx hardhat ignition deploy ./ignition/modules/GigaCredit.ts --network sepolia --verify
 ```
