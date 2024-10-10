@@ -1,4 +1,5 @@
 {
   "GigaCreditModule#GigaCredit": "0x603f1B4dAf6A3780f1c9237BDfcb02A3A7DBBA88",
-  "GigaOracleModule#GigaOracle": "0x330257AAbbF2b67e1c26cf9EaCe37718c7739C0c"
+  "GigaOracleModule#GigaOracle": "0x330257AAbbF2b67e1c26cf9EaCe37718c7739C0c",
+  "GigaCreditIssuerModule#GigaCreditIssuer": "0x4eF68B8A76201724bb34D6b9fc760e97c7eF298D"
 }
