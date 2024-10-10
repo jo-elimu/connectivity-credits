@@ -23,6 +23,7 @@ npx istanbul check-coverage --lines 80
 ```sh
 # rm ./ignition/deployments/
 npx hardhat node
+npx hardhat ignition deploy ./ignition/modules/GigaOracle.ts --network localhost
 npx hardhat ignition deploy ./ignition/modules/GigaCredit.ts --network localhost
 ```
 
@@ -31,5 +32,6 @@ npx hardhat ignition deploy ./ignition/modules/GigaCredit.ts --network localhost
 ```sh
 # rm ./ignition/deployments/
 npx hardhat node
+npx hardhat ignition deploy ./ignition/modules/GigaOracle.ts --network sepolia --verify
 npx hardhat ignition deploy ./ignition/modules/GigaCredit.ts --network sepolia --verify
 ```
