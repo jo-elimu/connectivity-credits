@@ -51,4 +51,4 @@ describe("GigaCredit", function () {
             expect(await gigaCredit.balanceOf(owner.address)).to.equal(ethers.parseEther("10"));
         });
     });
-})
+});

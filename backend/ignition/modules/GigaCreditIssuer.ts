@@ -3,9 +3,12 @@
 
 import { buildModule } from "@nomicfoundation/hardhat-ignition/modules";
 
-const GigaCreditIssuerModule = buildModule("GigaCreditIssuerModule", (m) => {
-  const gigaCreditIssuer = m.contract("GigaCreditIssuer");
+import deployed_addresses from "../../ignition/deployments/chain-11155111/deployed_addresses.json";
+const gigaCreditAddress: string = deployed_addresses["GigaCreditModule#GigaCredit"];
+console.log('gigaCreditAddress:', gigaCreditAddress);
 
+const GigaCreditIssuerModule = buildModule("GigaCreditIssuerModule", (m) => {
+  const gigaCreditIssuer = m.contract("GigaCreditIssuer", [gigaCreditAddress]);
   return { gigaCreditIssuer };
 });
 
