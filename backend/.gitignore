@@ -20,4 +20,5 @@ ignition/deployments/chain-31337
 
 # Hardhat Ignition default folder for deployments against Sepolia
 ignition/deployments/chain-11155111/*
+!ignition/deployments/chain-11155111/artifacts
 !ignition/deployments/chain-11155111/deployed_addresses.json
