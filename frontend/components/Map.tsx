@@ -15,7 +15,7 @@ export default function Map({school}: any) {
           container: mapContainerRef.current,
           style: 'mapbox://styles/mapbox/satellite-streets-v12',
           center: [school.longitude, school.latitude],
-          zoom: 1.8,
+          zoom: 6,
         })
 
         map.addControl(new mapboxgl.NavigationControl());
