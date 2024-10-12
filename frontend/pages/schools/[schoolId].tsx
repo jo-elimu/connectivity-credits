@@ -4,6 +4,8 @@ import Logos from "@/public/logos.png"
 import Map from "@/components/Map";
 import SkeletonLoader from "@/components/SkeletonLoader";
 import ConnectivityStatus from "@/components/ConnectivityStatus";
+import { ConnectWallet } from "@/components/ConnectWallet";
+import CreditIssuerBalance from "@/components/CreditIssuerBalance";
 
 export default function School({school}: any) {
   console.log('School')
@@ -14,56 +16,59 @@ export default function School({school}: any) {
   return (
     <div>
       <header className="p-8 border-b-2 border-slate-800 text-xl">
-        <a
-          className="rounded-full bg-foreground text-background hover:bg-[#383838] dark:hover:bg-[#ccc] px-8 py-2 float-right"
-          href="#"
-          rel="noopener noreferrer"
-        >
-          Connect Wallet
-        </a>
+        <ConnectWallet />
         <div className="py-2">
           CONNΞCTIVITY CRΞDITS
         </div>
         <div className="clear-right"></div>
       </header>
-      <main className="p-8 flex flex-col lg:flex-row space-y-8 lg:space-y-0 lg:space-x-8">
-        <div className="w-full">
-            <div className="border-2 border-r-4 border-b-4 border-slate-800 shadow rounded-xl min-h-64">
-              {router.isFallback ? (
-                <div className="animate-pulse p-4 bg-slate-900">
-                  Map loading...
-                </div>
-              ) : (
-                <Map school={school} />
-              )}
-            </div>
+      <main className="p-8">
+        <div className="flex flex-col lg:flex-row space-y-8 lg:space-y-0 lg:space-x-8">
+          <div className="w-full">
+              <div className="border-2 border-r-4 border-b-4 border-slate-800 shadow rounded-xl min-h-64">
+                {router.isFallback ? (
+                  <div className="animate-pulse p-4 bg-slate-900">
+                    Map loading...
+                  </div>
+                ) : (
+                  <Map school={school} />
+                )}
+              </div>
+          </div>
+          <div className="w-full">
+            {router.isFallback ? (
+              <SkeletonLoader />
+            ) : (
+              <>
+                <p>
+                  <label className="font-bold">School ID</label><br />
+                  {school.giga_id_school}
+                </p>
+                <p className="mt-4">
+                  <label className="font-bold">School name</label><br />
+                  {school.school_name}
+                </p>
+                <p className="mt-4">
+                  <label className="font-bold">Connectivity status</label><br />
+                  <ConnectivityStatus />
+                </p>
+                <p className="mt-4">
+                  <label className="font-bold">Country</label><br />
+                  {school.country_iso3_code}
+                </p>
+                <p className="mt-4">
+                  <label className="font-bold">Education level</label><br />
+                  {school.education_level}
+                </p>
+              </>
+            )}
+          </div>
         </div>
-        <div className="w-full">
+        <div className="mt-8 border-t pt-8 border-slate-800 flex justify-center">
           {router.isFallback ? (
             <SkeletonLoader />
-          ): (
-            <>
-              <p>
-                <label className="font-bold">School ID</label><br />
-                {school.giga_id_school}
-              </p>
-              <p className="mt-4">
-                <label className="font-bold">School name</label><br />
-                {school.school_name}
-              </p>
-              <p className="mt-4">
-                <label className="font-bold">Connectivity status</label><br />
-                <ConnectivityStatus />
-              </p>
-              <p className="mt-4">
-                <label className="font-bold">Country</label><br />
-                {school.country_iso3_code}
-              </p>
-              <p className="mt-4">
-                <label className="font-bold">Education level</label><br />
-                {school.education_level}
-              </p>
-            </>
+          ) : (
+            <CreditIssuerBalance school={school} />
           )}
         </div>
       </main>
