@@ -34,5 +34,6 @@ npx hardhat ignition deploy ./ignition/modules/GigaCreditIssuer.ts --network loc
 # rm ./ignition/deployments/
 npx hardhat node
 npx hardhat ignition deploy ./ignition/modules/GigaOracle.ts --network sepolia --verify
+npx hardhat ignition deploy ./ignition/modules/GigaCredit.ts --network sepolia --verify
 npx hardhat ignition deploy ./ignition/modules/GigaCreditIssuer.ts --network sepolia --verify
 ```
