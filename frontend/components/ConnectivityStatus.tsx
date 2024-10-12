@@ -1,3 +1,5 @@
+import deployed_addresses from "../../backend/ignition/deployments/chain-11155111/deployed_addresses.json"
+
 export default function ConnectivityStatus() {
     const randomNumber = Math.round(Math.random() * 3)
     console.log('randomNumber:', randomNumber)
@@ -11,10 +13,18 @@ export default function ConnectivityStatus() {
             </span>
         )
     } else if (randomNumber == 1) {
+        const deploymentAddress = deployed_addresses["GigaCreditIssuerModule#GigaCreditIssuer"]
+        console.log('deploymentAddress:', deploymentAddress)
         return (
+            <>
             <span className="border-2 border-red-600 rounded-xl bg-red-900 text-red-400 px-2 py-1 inline-flex">
                 Not connected
-            </span>
+            </span> <a className="rounded-full bg-foreground text-background hover:bg-[#383838] dark:hover:bg-[#ccc] px-4 py-2"
+                target="_blank"
+                href={`https://sepolia.etherscan.io/address/${deploymentAddress}#writeContract#F1`}>
+                    Issue Connectivity Credits
+            </a>
+            </>
         )
     } else {
         return (
